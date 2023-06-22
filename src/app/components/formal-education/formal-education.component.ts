@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from 'src/app/types/practical-experience';
+import { Course } from 'src/app/models/practical-experience';
 
 @Component({
   selector: 'app-formal-education',

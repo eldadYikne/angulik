@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from 'src/app/types/contact';
+import { Input } from 'src/app/models/contact';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
+  template: `
+    Favorite Color: <input type="text" [(ngModel)]="favoriteColor" />
+  `,
 })
 export class ContactComponent implements OnInit {
   constructor() {}
