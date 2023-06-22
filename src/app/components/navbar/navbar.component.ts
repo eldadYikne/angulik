@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarLink } from 'src/app/models/navbar';
+import { NavbarLink } from 'src/app/models/navbar.model';
 import { OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({

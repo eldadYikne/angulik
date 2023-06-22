@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IconLink } from 'src/app/models/footer';
+import { IconLink } from 'src/app/models/footer.model';
 
 @Component({
   selector: 'app-footer',

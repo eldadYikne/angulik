@@ -1,7 +1,7 @@
 <div class="contact">
   <span class="main-title"> Contact Us</span>
   <div class="form-contact">
-    <form class="row g-3 needs-validation" novalidate>
+    <form class="main-form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div *ngFor="let input of inputs" class="input">
         <label for="validationTooltip01" class="form-label">
           {{ input.label }}
@@ -11,9 +11,12 @@
           [type]="input.type"
           class="form-control"
           id="validationTooltip01"
+          matInput
           [placeholder]="input.placeholder"
+          [formControlName]="input.formControlName"
+          (input)="handelChange(input)"
+          oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
         />
-
         <input
           *ngIf="input.isNumber && input.type !== 'select'"
           [type]="input.type"
@@ -21,20 +24,36 @@
           id="exampleFormControlInput1"
           [placeholder]="input.placeholder"
           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          matInput
+          [placeholder]="input.placeholder"
+          [formControlName]="input.formControlName"
+          (input)="handelChange(input)"
         />
-        <select
-          *ngIf="input.type === 'select'"
-          class="custom-select"
-          aria-label="Default select example"
+        <div
+          style="color: red; white-space: nowrap"
+          *ngIf="
+            !inputValid[input.formControlName] &&
+            form.value[input.formControlName]
+          "
         >
-          <option selected>Select contact reason</option>
-          <option value="1">Want to meet you</option>
-          <option value="2">Want to ask a question</option>
-          <option value="3">I would love to hear more about you</option>
-        </select>
+          {{ input.warning }}
+        </div>
       </div>
       <div class="valid-tooltip">Looks good!</div>
-      <button type="button" class="button-confirm" type="submit">send</button>
+      <button
+        [ngClass]="{
+          'button-confirm': form.valid,
+          'button-disabled': !form.valid
+        }"
+        [disabled]="!form.valid"
+        (click)="(onSubmit)"
+        type="submit"
+      >
+        send
+      </button>
     </form>
+    <span *ngIf="requestSuccessful" class="successful-message">
+      Your Message sent Successfully !</span
+    >
   </div>
 </div>

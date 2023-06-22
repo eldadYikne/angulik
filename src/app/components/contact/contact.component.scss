@@ -21,46 +21,70 @@
     width: fit-content;
   }
   .form-contact {
-    width: 300px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    .input {
-      display: flex;
-      flex-direction: column;
+    gap: 15px;
+    .main-form {
       width: 100%;
-      gap: 5px;
-      .form-control {
+      .input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        .form-control {
+          width: 100%;
+          height: 35px;
+          border-radius: 8px;
+          border: none;
+          margin-bottom: 10px;
+        }
+        .form-label {
+          color: white;
+        }
+        .custom-select {
+          height: 35px;
+          border-radius: 8px;
+          border: none;
+          margin-bottom: 10px;
+          $form-select-border-color: red;
+        }
+      }
+      .button-confirm {
+        margin-top: 30px;
+        background-color: $light-green;
         width: 100%;
         height: 35px;
-        border-radius: 8px;
+        border-radius: 15px;
         border: none;
-        margin-bottom: 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(91, 91, 91);
+          transition: 0.2s;
+          color: #ffffff;
+        }
       }
-      .form-label {
-        color: white;
-      }
-      .custom-select {
+      .button-disabled {
+        margin-top: 30px;
+        background-color: #6c757d;
+        width: 100%;
         height: 35px;
-        border-radius: 8px;
+        border-radius: 15px;
         border: none;
-        margin-bottom: 10px;
-        $form-select-border-color: red;
       }
     }
-    .button-confirm {
-      margin-top: 30px;
-      background-color: $light-green;
-      width: 100%;
-      height: 35px;
-      border-radius: 15px;
-      border: none;
-      cursor: pointer;
-      &:hover {
-        background-color: gray;
-        transition: 0.2s;
-        color: #ffffff;
-      }
+    .successful-message {
+      font-size: 25px;
+      color: $pink;
+    }
+  }
+}
+@media screen and (max-width: $small) {
+  .contact {
+    padding: 20px;
+    .form-contact {
+      width: 280px;
     }
   }
 }
