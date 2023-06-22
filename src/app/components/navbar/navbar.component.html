@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="logo">Angulik</div>
+
+  <nav
+    [ngClass]="{
+      'container-navbar-links-open': menuInMobile,
+      'container-navbar-links': !menuInMobile
+    }"
+  >
+    <a
+      class="navbar-link"
+      *ngFor="let link of navbarLinks"
+      [routerLink]="link.href"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active"
+      (click)="menuInMobileToggle(false)"
+    >
+      {{ link.text }}
+    </a>
+  </nav>
+  <img
+    (click)="menuInMobileToggle(!menuInMobile)"
+    class="menu-button"
+    src="../../../assets//images//menu.svg"
+  />
+</div>

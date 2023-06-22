@@ -1,0 +1,30 @@
+<div class="practical">
+  <span class="main-title">Projects</span>
+  <div class="projects-container">
+    <div *ngFor="let project of projects" class="project">
+      <img class="project-image" [src]="project.imgUrl" />
+      <div class="project-content">
+        <div class="project-text">
+          <a [href]="project.projLink" class="title" target="_blank">
+            {{ project.title }}</a
+          >
+          <span class="description"> {{ project.content }}</span>
+        </div>
+        <div class="features-container">
+          <div class="technology-icons-container">
+            <span *ngFor="let technology of project.technologies">
+              <img
+                class="technology-icon"
+                [src]="'../../../assets/images/' + technology + '.svg'"
+              />
+            </span>
+          </div>
+
+          <span class="feature">
+            <a [href]="project.gitLink" target="_blank"> Git</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

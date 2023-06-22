@@ -1,0 +1,44 @@
+.footer {
+  height: 100px;
+  width: 100%;
+  background-color: #ffffff;
+  background-image: url("../../../assets/images/background-stars.png");
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  color: #ffffff;
+
+  .footer-upper {
+    background-color: #ffffff2a;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+      .sub-title {
+        font-size: 16px;
+      }
+      .links-container {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        .link {
+          a:hover {
+            cursor: pointer;
+          }
+          img {
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

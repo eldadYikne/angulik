@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "NanumGothic";
+  src: url("./assets//fonts//NanumGothic-Regular.ttf");
+}
+@font-face {
+  font-family: "BalsamiqSans";
+  src: url("./assets//fonts//BalsamiqSans-Regular.ttf");
+}
+
+body {
+  font-family: "BalsamiqSans";
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}

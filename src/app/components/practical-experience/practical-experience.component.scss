@@ -1,0 +1,131 @@
+@import "../../../assets/vars/vars.scss";
+
+.practical {
+  background-color: #ffffff;
+  background-image: url("../../../assets/images/background-stars.png");
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 60px;
+
+  & .main-title {
+    color: $light-green;
+    font-size: 60px;
+    display: block;
+    margin-bottom: 20px;
+    user-select: none;
+    width: fit-content;
+  }
+
+  .projects-container {
+    max-width: 1200px;
+    display: grid;
+    // grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 20px;
+    line-gap-override: 15px;
+    .project {
+      background-color: white;
+      width: 310px;
+      height: 300px;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      row-gap: 15px;
+      column-gap: 15px;
+      justify-self: center;
+      .project-image {
+        border-radius: 20px;
+        box-shadow: rgba(59, 42, 42, 0.626) 0px 3px 8px;
+        height: 150px;
+        width: 280px;
+      }
+      .project-content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        padding-inline-start: 10px;
+        height: 100%;
+        justify-content: space-between;
+        .project-text {
+          .title {
+            color: $pink;
+            font-size: 20px;
+            padding-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+          .description {
+            color: $pink;
+          }
+        }
+        .technology-icons-container {
+          gap: 5px;
+          display: flex;
+          .technology-icon {
+            height: 30px;
+            width: 30px;
+          }
+        }
+
+        & .features-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+
+          & .feature {
+            & a {
+              text-decoration: none;
+              padding-inline-end: 15px;
+              &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .practical {
+    padding: 20px;
+
+    & .main-title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .projects-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+}
+@media screen and (min-width: $small) {
+  .practical {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & .main-title {
+    }
+
+    .projects-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+}

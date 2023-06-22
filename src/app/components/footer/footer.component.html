@@ -1,0 +1,15 @@
+<div class="footer">
+  <div class="footer-upper">
+    <div class="footer-content">
+      <span class="sub-title">Let's be friends </span>
+
+      <div class="links-container">
+        <div class="link" *ngFor="let iconLink of iconLinks">
+          <a [href]="iconLink.href" target="_blank">
+            <img [src]="'../../../assets/images/' + iconLink.type + '.svg'" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
