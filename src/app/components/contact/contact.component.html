@@ -15,7 +15,7 @@
           [placeholder]="input.placeholder"
           [formControlName]="input.formControlName"
           (input)="handelChange(input)"
-          oninput=" this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+          oninput="this.value = this.value.replace(/[^a-zA-Z@]/g, '');"
           (focusout)="isInputFocused[input.formControlName] = true"
           (focus)="isInputFocused[input.formControlName] = false"
         />
