@@ -124,13 +124,13 @@ Project Link: [https://angulik.onrender.com](https://angulik.onrender.com)
 
 You can view different projects.
 
-![Contacts page image](src/assets/images/angulik-PRACTICAL.png "PRACTICAL page")
+![Contacts page image](src/assets/images/angulik-practical.png "PRACTICAL page")
 
 ### Contact
 
 You can try using the angular form, it's simple and looks great!
 
-![Contacts page image](src/assets/images/angulik-CONTACT.png "Contacts page")
+![Contacts page image](src/assets/images/angulik-contact.png "Contacts page")
 
 ## Mobile full responsive
 
