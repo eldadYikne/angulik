@@ -30,7 +30,6 @@ export class ContactComponent implements OnInit {
       formControlName: 'email',
       matAutocomplete: 'emailForm',
       warning: 'Email must include @ .',
-      onInput: "this.value = this.value.replace(/[^a-zA-Z]/g, '')",
     },
     {
       label: 'FirstName',
@@ -39,7 +38,6 @@ export class ContactComponent implements OnInit {
       formControlName: 'firstName',
       matAutocomplete: 'firstNameForm',
       warning: 'Must start with uppercase',
-      onInput: "this.value = this.value.replace(/[^a-zA-Z]/g, '')",
     },
     {
       label: 'LastName',
@@ -48,7 +46,6 @@ export class ContactComponent implements OnInit {
       formControlName: 'lastName',
       matAutocomplete: 'lastNameForm',
       warning: 'Must start with uppercase',
-      onInput: "this.value = this.value.replace(/[^a-zA-Z]/g, '')",
     },
     {
       label: 'Phone',
@@ -58,8 +55,6 @@ export class ContactComponent implements OnInit {
       matAutocomplete: 'phoneForm',
       warning: 'Enter valid phone number please',
       isNumber: true,
-      onInput:
-        "this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*)./g, '$1')",
     },
   ];
   inputValid: InputValid = {
