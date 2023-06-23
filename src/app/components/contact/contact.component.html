@@ -7,7 +7,7 @@
           {{ input.label }}
         </label>
         <input
-          *ngIf="!input.isNumber"
+          *ngIf="!input.isNumber && input.type !== 'email'"
           [type]="input.type"
           class="form-control"
           id="validationTooltip01"
@@ -27,6 +27,19 @@
           id="exampleFormControlInput1"
           [placeholder]="input.placeholder"
           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          matInput
+          [placeholder]="input.placeholder"
+          [formControlName]="input.formControlName"
+          (input)="handelChange(input)"
+          (focusout)="isInputFocused[input.formControlName] = true"
+          (focus)="isInputFocused[input.formControlName] = false"
+        />
+        <input
+          *ngIf="input.type === 'email'"
+          [type]="input.type"
+          class="form-control"
+          id="exampleFormControlInput1"
+          [placeholder]="input.placeholder"
           matInput
           [placeholder]="input.placeholder"
           [formControlName]="input.formControlName"

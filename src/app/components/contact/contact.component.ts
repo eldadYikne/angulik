@@ -53,7 +53,7 @@ export class ContactComponent implements OnInit {
       type: 'phone',
       formControlName: 'phone',
       matAutocomplete: 'phoneForm',
-      warning: 'Enter valid phone number please',
+      warning: 'Enter valid phone number please (10 numbers)',
       isNumber: true,
     },
   ];
