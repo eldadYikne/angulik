@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
       type: 'email',
       formControlName: 'email',
       matAutocomplete: 'emailForm',
-      warning: 'Email must include @ .',
+      warning: 'Email must be valid.',
     },
     {
       label: 'FirstName',
@@ -53,7 +53,7 @@ export class ContactComponent implements OnInit {
       type: 'phone',
       formControlName: 'phone',
       matAutocomplete: 'phoneForm',
-      warning: 'Enter valid phone number please (10 numbers)',
+      warning: 'Type at least 10 numbers',
       isNumber: true,
     },
   ];
@@ -88,7 +88,10 @@ export class ContactComponent implements OnInit {
 
     if (this.form.value[input.formControlName]) {
       if (input.formControlName === 'email') {
-        if (this.form.value[input.formControlName]?.includes('@')) {
+        if (
+          this.form.value[input.formControlName]?.includes('@') &&
+          this.form.value[input.formControlName]?.includes('.')
+        ) {
           this.inputValid[input.formControlName] = true;
         } else {
           this.inputValid[input.formControlName] = false;
