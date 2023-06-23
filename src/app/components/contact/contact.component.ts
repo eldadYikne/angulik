@@ -29,7 +29,8 @@ export class ContactComponent implements OnInit {
       type: 'email',
       formControlName: 'email',
       matAutocomplete: 'emailForm',
-      warning: 'email must include @ .',
+      warning: 'Email must include @ .',
+      onInput: "this.value = this.value.replace(/[^a-zA-Z]/g, '')",
     },
     {
       label: 'FirstName',
@@ -37,7 +38,8 @@ export class ContactComponent implements OnInit {
       type: 'text',
       formControlName: 'firstName',
       matAutocomplete: 'firstNameForm',
-      warning: 'must start with uppercase',
+      warning: 'Must start with uppercase',
+      onInput: "this.value = this.value.replace(/[^a-zA-Z]/g, '')",
     },
     {
       label: 'LastName',
@@ -45,7 +47,8 @@ export class ContactComponent implements OnInit {
       type: 'text',
       formControlName: 'lastName',
       matAutocomplete: 'lastNameForm',
-      warning: 'must start with uppercase',
+      warning: 'Must start with uppercase',
+      onInput: "this.value = this.value.replace(/[^a-zA-Z]/g, '')",
     },
     {
       label: 'Phone',
@@ -53,11 +56,19 @@ export class ContactComponent implements OnInit {
       type: 'phone',
       formControlName: 'phone',
       matAutocomplete: 'phoneForm',
-      warning: 'enter valid phone number please',
+      warning: 'Enter valid phone number please',
       isNumber: true,
+      onInput:
+        "this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*)./g, '$1')",
     },
   ];
   inputValid: InputValid = {
+    email: false,
+    firstName: false,
+    lastName: false,
+    phone: false,
+  };
+  isInputFocused: InputValid = {
     email: false,
     firstName: false,
     lastName: false,

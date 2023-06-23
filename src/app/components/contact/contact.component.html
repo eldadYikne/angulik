@@ -7,7 +7,7 @@
           {{ input.label }}
         </label>
         <input
-          *ngIf="!input.isNumber && input.type !== 'select'"
+          *ngIf="!input.isNumber"
           [type]="input.type"
           class="form-control"
           id="validationTooltip01"
@@ -15,10 +15,13 @@
           [placeholder]="input.placeholder"
           [formControlName]="input.formControlName"
           (input)="handelChange(input)"
-          oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+          oninput=" this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+          (focusout)="isInputFocused[input.formControlName] = true"
+          (focus)="isInputFocused[input.formControlName] = false"
         />
+
         <input
-          *ngIf="input.isNumber && input.type !== 'select'"
+          *ngIf="input.isNumber"
           [type]="input.type"
           class="form-control"
           id="exampleFormControlInput1"
@@ -28,18 +31,20 @@
           [placeholder]="input.placeholder"
           [formControlName]="input.formControlName"
           (input)="handelChange(input)"
+          (focusout)="isInputFocused[input.formControlName] = true"
+          (focus)="isInputFocused[input.formControlName] = false"
         />
         <div
           style="color: red; white-space: nowrap"
           *ngIf="
             !inputValid[input.formControlName] &&
-            form.value[input.formControlName]
+            form.value[input.formControlName] &&
+            isInputFocused[input.formControlName]
           "
         >
           {{ input.warning }}
         </div>
       </div>
-      <div class="valid-tooltip">Looks good!</div>
       <button
         [ngClass]="{
           'button-confirm': form.valid,
