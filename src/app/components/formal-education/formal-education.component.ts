@@ -22,7 +22,7 @@ export class FormalEducationComponent implements OnInit {
     {
       title: 'Practical',
       imgUrl:
-        'https://media.licdn.com/dms/image/C560BAQHbQSUIv5GbBg/company-logo_200_200/0/1552485112092?e=1695254400&v=beta&t=BbrPnIn9B-7bMFmXNbqYjyzNH7Zn8VMD2138Sp-lOPg',
+        'https://gocode.co.il/assets/logo.621b4054.png',
       text: 'For the last year I have been working at the gocode company as a fullstac developer in the languages typescript, nodejs, mongodb, vue, react. I learn quickly and meaningfully in my workplace.',
     },
   ];
