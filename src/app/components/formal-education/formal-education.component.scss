@@ -28,6 +28,12 @@
       justify-content: space-between;
       .course-content {
         width: 50%;
+        .time-title {
+          color: $pink;
+          font-size: 20px;
+          display: block;
+          padding-bottom: 10px;
+        }
         .sub-title {
           color: $pink;
           font-size: 30px;
